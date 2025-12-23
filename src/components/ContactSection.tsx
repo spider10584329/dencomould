@@ -15,8 +15,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "david@dencomould.co.nz",
-    href: "mailto:david@dencomould.co.nz",
+    value: "info@dencomould.co.nz",
+    href: "mailto:info@dencomould.co.nz",
   },
   {
     icon: MapPin,
