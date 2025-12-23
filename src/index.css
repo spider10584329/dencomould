@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Industrial Dark Theme - Steel & Iron */
+    --background: 220 15% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Industrial Dark Green Accent - #33691e */
+    --primary: 88 51% 26%;
+    --primary-foreground: 210 20% 95%;
+
+    /* Steel Gray */
+    --secondary: 220 10% 20%;
+    --secondary-foreground: 210 20% 95%;
+
+    /* Muted Steel */
+    --muted: 220 10% 18%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Forest Green Accent - #33691e */
+    --accent: 88 51% 26%;
+    --accent-foreground: 210 20% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 10% 20%;
+    --input: 220 10% 18%;
+    --ring: 88 51% 26%;
+
+    --radius: 0.5rem;
+
+    /* Custom Industrial Tokens */
+    --steel: 220 10% 30%;
+    --steel-light: 220 10% 45%;
+    --iron: 220 15% 15%;
+    --copper: 88 51% 26%;
+    --spark: 88 51% 35%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 8%) 0%, hsl(220 15% 15%) 100%);
+    --gradient-steel: linear-gradient(180deg, hsl(220 10% 18%) 0%, hsl(220 15% 12%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(88 51% 26%) 0%, hsl(88 51% 32%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(220, 15%, 8%, 0.7) 0%, hsla(220, 15%, 8%, 0.9) 100%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsla(88, 51%, 26%, 0.3);
+    --shadow-card: 0 10px 40px -10px hsla(0, 0%, 0%, 0.5);
+    --shadow-elevated: 0 25px 50px -12px hsla(0, 0%, 0%, 0.6);
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 210 20% 95%;
+    --card: 220 15% 12%;
+    --card-foreground: 210 20% 95%;
+    --popover: 220 15% 10%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 88 51% 26%;
+    --primary-foreground: 210 20% 95%;
+    --secondary: 220 10% 20%;
+    --secondary-foreground: 210 20% 95%;
+    --muted: 220 10% 18%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 88 51% 26%;
+    --accent-foreground: 210 20% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 10% 20%;
+    --input: 220 10% 18%;
+    --ring: 88 51% 26%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .border-gradient {
+    border-image: var(--gradient-accent) 1;
+  }
+
+  .card-industrial {
+    @apply bg-card border border-border rounded-lg;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glow-accent {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
