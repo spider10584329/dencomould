@@ -16,8 +16,8 @@
     --popover: 220 15% 10%;
     --popover-foreground: 210 20% 95%;
 
-    /* Industrial Dark Green Accent - #33691e */
-    --primary: 88 51% 26%;
+    /* Blue Accent - #2491ef */
+    --primary: 207 86% 45%;
     --primary-foreground: 210 20% 95%;
 
     /* Steel Gray */
@@ -28,8 +28,8 @@
     --muted: 220 10% 18%;
     --muted-foreground: 215 15% 55%;
 
-    /* Forest Green Accent - #33691e */
-    --accent: 88 51% 26%;
+    /* Blue Accent - #2491ef */
+    --accent: 207 86% 45%;
     --accent-foreground: 210 20% 95%;
 
     --destructive: 0 84% 60%;
@@ -37,7 +37,7 @@
 
     --border: 220 10% 20%;
     --input: 220 10% 18%;
-    --ring: 88 51% 26%;
+    --ring: 207 86% 45%;
 
     --radius: 0.5rem;
 
@@ -45,17 +45,17 @@
     --steel: 220 10% 30%;
     --steel-light: 220 10% 45%;
     --iron: 220 15% 15%;
-    --copper: 88 51% 26%;
-    --spark: 88 51% 35%;
+    --copper: 207 86% 45%;
+    --spark: 207 86% 55%;
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 15% 8%) 0%, hsl(220 15% 15%) 100%);
     --gradient-steel: linear-gradient(180deg, hsl(220 10% 18%) 0%, hsl(220 15% 12%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(88 51% 26%) 0%, hsl(88 51% 32%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(207 86% 45%) 0%, hsl(207 86% 52%) 100%);
     --gradient-overlay: linear-gradient(180deg, hsla(220, 15%, 8%, 0.7) 0%, hsla(220, 15%, 8%, 0.9) 100%);
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsla(88, 51%, 26%, 0.3);
+    --shadow-glow: 0 0 40px hsla(207, 86%, 45%, 0.3);
     --shadow-card: 0 10px 40px -10px hsla(0, 0%, 0%, 0.5);
     --shadow-elevated: 0 25px 50px -12px hsla(0, 0%, 0%, 0.6);
   }
@@ -67,19 +67,19 @@
     --card-foreground: 210 20% 95%;
     --popover: 220 15% 10%;
     --popover-foreground: 210 20% 95%;
-    --primary: 88 51% 26%;
+    --primary: 207 86% 45%;
     --primary-foreground: 210 20% 95%;
     --secondary: 220 10% 20%;
     --secondary-foreground: 210 20% 95%;
     --muted: 220 10% 18%;
     --muted-foreground: 215 15% 55%;
-    --accent: 88 51% 26%;
+    --accent: 207 86% 45%;
     --accent-foreground: 210 20% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 220 10% 20%;
     --input: 220 10% 18%;
-    --ring: 88 51% 26%;
+    --ring: 207 86% 54%;
   }
 }
 
