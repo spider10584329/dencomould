@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link, useLocation } from "react-router-dom";
+import dencologLogo from "@/assets/dencolog.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -38,7 +39,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/src/assets/dencolog.png" 
+              src={dencologLogo} 
               alt="DENCO Australasia Logo" 
               className="h-14 w-auto"
             />

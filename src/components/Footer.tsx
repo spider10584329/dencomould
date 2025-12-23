@@ -1,5 +1,6 @@
 import { Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
+import dencologLogo from "@/assets/dencolog.png";
 
 const footerLinks = {
   company: [
@@ -38,7 +39,7 @@ export const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center mb-4">
               <img 
-                src="/src/assets/dencolog.png" 
+                src={dencologLogo} 
                 alt="DENCO Australasia Logo" 
                 className="h-12 w-auto"
               />
