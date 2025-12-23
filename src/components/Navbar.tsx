@@ -51,7 +51,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`transition-colors font-medium text-sm uppercase tracking-wider ${
+                className={`transition-colors font-semibold text-base uppercase tracking-wider ${
                   location.pathname === link.href
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary"

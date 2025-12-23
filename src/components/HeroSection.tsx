@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-manufacturing.jpg";
 
 export const HeroSection = () => {
@@ -64,16 +65,16 @@ export const HeroSection = () => {
             className="flex flex-wrap gap-4"
           >
             <Button variant="hero" size="xl" asChild>
-              <a href="#contact">
+              <Link to="/contact">
                 Request a Quote
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
+              </Link>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="#services">
+              <Link to="/services">
                 <Play className="mr-2 w-5 h-5" />
                 Our Services
-              </a>
+              </Link>
             </Button>
           </motion.div>
 
