@@ -2,9 +2,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import { useTheme } from "@/hooks/use-theme";
 import heroImage from "@/assets/hero-manufacturing.jpg";
 
 export const HeroSection = () => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark" || 
+    (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
   return (
     <section
       id="home"
@@ -17,8 +22,16 @@ export const HeroSection = () => {
           alt="Industrial mold manufacturing facility"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+        <div className={`absolute inset-0 ${
+          isDark 
+            ? "bg-gradient-to-r from-background via-background/70 to-background/30" 
+            : "bg-gradient-to-r from-background/80 via-background/60 to-background/10"
+        }`} />
+        <div className={`absolute inset-0 ${
+          isDark 
+            ? "bg-gradient-to-t from-background via-transparent to-background/20" 
+            : "bg-gradient-to-t from-background/70 via-transparent to-background/1"
+        }`} />
       </div>
 
       {/* Content */}
@@ -31,7 +44,7 @@ export const HeroSection = () => {
             className="mb-6"
           >
             <span className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-medium uppercase tracking-wider">
-              25+ Years of Excellence
+              30+ Years Molding Experience & Toolmaking Consulting
             </span>
           </motion.div>
 
@@ -52,7 +65,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-8 leading-relaxed"
+            className="text-lg sm:text-xl  max-w-xl mb-8 leading-relaxed"
           >
             From concept to completion, we deliver high-precision molds for injection molding, 
             die casting, and custom tooling. Your vision, engineered to perfection.
@@ -87,7 +100,7 @@ export const HeroSection = () => {
           >
             {[
               { value: "500+", label: "Projects Completed" },
-              { value: "25+", label: "Years Experience" },
+              { value: "30+", label: "Years Experience" },
               { value: "99%", label: "Client Satisfaction" },
             ].map((stat, index) => (
               <div key={index} className="text-center sm:text-left">

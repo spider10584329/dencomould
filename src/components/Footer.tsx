@@ -1,6 +1,8 @@
 import { Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
-import dencologLogo from "@/assets/dencolog.png";
+import { useTheme } from "@/hooks/use-theme";
+import dencologDark from "@/assets/dencolog_dark.png";
+import dencologLight from "@/assets/dencolog_light.png";
 
 const footerLinks = {
   company: [
@@ -31,6 +33,10 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark" || 
+    (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
   return (
     <footer className="bg-card border-t border-border">
       <div className="section-container py-16">
@@ -39,7 +45,7 @@ export const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center mb-4">
               <img 
-                src={dencologLogo} 
+                src={isDark ? dencologDark : dencologLight} 
                 alt="DENCO Australasia Logo" 
                 className="h-12 w-auto"
               />

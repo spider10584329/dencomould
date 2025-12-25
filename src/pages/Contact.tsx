@@ -1,18 +1,12 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from "lucide-react";
+import { Mail, MapPin, Send, Clock, MessageSquare } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+64 9 900 1234",
-    href: "tel:+6499001234",
-  },
   {
     icon: Mail,
     label: "Email",
@@ -22,7 +16,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Address",
-    value: "123 Industrial Park, Manufacturing City, MC 12345",
+    value: "5c Target Place, Glenfield, Auckland, New Zealand",
     href: "#",
   },
   {

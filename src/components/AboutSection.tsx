@@ -51,7 +51,7 @@ export const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="absolute -bottom-8 -right-8 bg-primary p-6 rounded-lg shadow-elevated max-w-xs hidden sm:block"
             >
-              <div className="font-display text-5xl font-bold text-primary-foreground">25+</div>
+              <div className="font-display text-5xl font-bold text-primary-foreground">30+</div>
               <div className="text-primary-foreground/80 text-sm mt-1">Years of Industry Excellence</div>
             </motion.div>
           </motion.div>

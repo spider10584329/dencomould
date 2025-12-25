@@ -6,9 +6,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import moldCloseup from "@/assets/mold-closeup.jpg";
-import dieCasting from "@/assets/die-casting.jpg";
-import cncMachining from "@/assets/cnc-machining.jpg";
+import product1 from "@/assets/product_1.jpg";
+import product2 from "@/assets/product_2.jpg";
+import product3 from "@/assets/product_3.jpg";
 
 const products = [
   {
@@ -16,7 +16,7 @@ const products = [
     name: "Precision Injection Molds",
     category: "Injection Molding",
     description: "High-precision injection molds designed for automotive, medical, and consumer electronics industries.",
-    image: moldCloseup,
+    image: product1,
     specs: ["Multi-cavity design", "Hot runner systems", "Tolerance: ±0.005mm"],
   },
   {
@@ -24,7 +24,7 @@ const products = [
     name: "Aluminum Die Cast Molds",
     category: "Die Casting",
     description: "Durable die casting molds engineered for high-pressure aluminum casting applications.",
-    image: dieCasting,
+    image: product2,
     specs: ["H13 tool steel", "Thermal management", "500K+ shot life"],
   },
   {
@@ -32,36 +32,12 @@ const products = [
     name: "CNC Machined Components",
     category: "CNC Machining",
     description: "Precision-machined components for mold bases, inserts, and custom tooling requirements.",
-    image: cncMachining,
+    image: product3,
     specs: ["5-axis capability", "EDM finishing", "Mirror polish available"],
-  },
-  {
-    id: 4,
-    name: "Two-Shot Molds",
-    category: "Injection Molding",
-    description: "Advanced two-shot and overmolding solutions for multi-material plastic parts.",
-    image: moldCloseup,
-    specs: ["Rotary design", "Multi-material", "Complex geometries"],
-  },
-  {
-    id: 5,
-    name: "Zinc Alloy Die Cast Molds",
-    category: "Die Casting",
-    description: "High-quality zinc alloy die casting molds for decorative and functional applications.",
-    image: dieCasting,
-    specs: ["Fine surface finish", "Thin wall capability", "1M+ shot life"],
-  },
-  {
-    id: 6,
-    name: "Mold Base Systems",
-    category: "Tooling",
-    description: "Standard and custom mold base systems manufactured to exact specifications.",
-    image: cncMachining,
-    specs: ["P20/S50C steel", "Pre-hardened", "Quick delivery"],
   },
 ];
 
-const categories = ["All", "Injection Molding", "Die Casting", "CNC Machining", "Tooling"];
+const categories = ["All", "Injection Molding", "Die Casting", "CNC Machining"];
 
 const Products = () => {
   const ref = useRef(null);
@@ -145,10 +121,10 @@ const Products = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300"
+                className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col h-full"
               >
                 {/* Image */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-56 overflow-hidden flex-shrink-0">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -161,7 +137,7 @@ const Products = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {product.name}
                   </h3>
@@ -181,7 +157,7 @@ const Products = () => {
                     ))}
                   </div>
 
-                  <Button variant="outline" size="sm" className="w-full group/btn" asChild>
+                  <Button variant="outline" size="sm" className="w-full group/btn mt-auto" asChild>
                     <Link to="/contact">
                       Request Quote
                       <ArrowUpRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />

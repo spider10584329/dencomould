@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowUpRight, Cog, Layers, Wrench, Zap, CheckCircle } from "lucide-react";
+import { ArrowUpRight, Cog, Layers, Zap, CheckCircle } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import moldCloseup from "@/assets/mold-closeup.jpg";
+import moldCloseup from "@/assets/product_1.jpg";
 import dieCasting from "@/assets/die-casting.jpg";
 import cncMachining from "@/assets/cnc-machining.jpg";
 
@@ -45,18 +45,6 @@ const services = [
       "EDM wire cutting & sinker EDM",
       "Surface grinding & polishing",
       "Quality inspection & reporting",
-    ],
-  },
-  {
-    icon: Wrench,
-    title: "Mold Repair & Maintenance",
-    description: "Expert mold repair, refurbishment, and preventive maintenance services to extend mold life.",
-    image: moldCloseup,
-    features: [
-      "Emergency repair services",
-      "Preventive maintenance programs",
-      "Mold refurbishment & upgrades",
-      "Spare parts manufacturing",
     ],
   },
 ];

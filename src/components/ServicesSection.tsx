@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, Cog, Layers, Wrench, Zap } from "lucide-react";
-import moldCloseup from "@/assets/mold-closeup.jpg";
+import moldCloseup from "@/assets/product_1.jpg";
 import dieCasting from "@/assets/die-casting.jpg";
 import cncMachining from "@/assets/cnc-machining.jpg";
 

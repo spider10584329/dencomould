@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link, useLocation } from "react-router-dom";
-import dencologLogo from "@/assets/dencolog.png";
+import { ThemeToggle } from "./ThemeToggle";
+import { useTheme } from "@/hooks/use-theme";
+import dencologDark from "@/assets/dencolog_dark.png";
+import dencologLight from "@/assets/dencolog_light.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -16,6 +19,11 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { theme } = useTheme();
+
+  // Determine if we're in dark mode (including system preference)
+  const isDark = theme === "dark" || 
+    (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +47,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src={dencologLogo} 
+              src={isDark ? dencologDark : dencologLight} 
               alt="DENCO Australasia Logo" 
               className="h-14 w-auto"
             />
@@ -54,7 +62,7 @@ export const Navbar = () => {
                 className={`transition-colors font-semibold text-base uppercase tracking-wider ${
                   location.pathname === link.href
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-primary"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
                 {link.name}
@@ -62,15 +70,9 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:+6499001234" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
-              <Phone className="w-4 h-4 mr-2" />
-              <span className="text-sm font-medium">+64 9 900 1234</span>
-            </a>
-            <Button variant="default" size="default" asChild>
-              <Link to="/contact">Get Quote</Link>
-            </Button>
+          {/* Theme Toggle */}
+          <div className="hidden md:flex items-center">
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -102,16 +104,14 @@ export const Navbar = () => {
                     className={`block px-4 py-2 hover:bg-muted transition-colors font-medium uppercase tracking-wider ${
                       location.pathname === link.href
                         ? "text-primary"
-                        : "text-muted-foreground hover:text-primary"
+                        : "text-foreground hover:text-primary"
                     }`}
                   >
                     {link.name}
                   </Link>
                 ))}
-                <div className="px-4 pt-3 border-t border-border">
-                  <Button variant="default" className="w-full" asChild>
-                    <Link to="/contact">Get Quote</Link>
-                  </Button>
+                <div className="px-4 pt-3 border-t border-border flex items-center justify-center">
+                  <ThemeToggle />
                 </div>
               </div>
             </motion.div>
